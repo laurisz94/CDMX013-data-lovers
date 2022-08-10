@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html {
@@ -13,18 +14,16 @@ body {
 }
 
 nav{
-    width: 1525px;
-    height: 237px;
+    width: 1440px;
+    height: 179px;
     position: relative;
-    background: linear-gradient(90deg, rgba(217,105,214,0.9528186274509804) 0%, rgba(253,29,29,0.9640231092436975) 50%, rgba(252,176,69,1) 88%);
-;
+    /*background: linear-gradient(90deg, rgba(217,105,214,0.9528186274509804) 0%, rgba(253,29,29,0.9640231092436975) 50%, rgba(252,176,69,1) 88%);*/
 }
 
 .logo {
-    width: 350px;
-    height: 220px;
+    width: 275px;
+    height: 179px;
     position: absolute;
-    margin: 10px;
     margin-left: 98px;
 }
 
@@ -33,32 +32,42 @@ svg{
     margin-left: 24px;
 }
 
-p {
-    position: none;
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: center;
 }
 .card {
-    /*border: 2px solid green;*/
-    width: 200px;
-    height: 100px;
-    background-image: url(https://sp.depositphotos.com/vector-images/olympic-games-texture-st100.html);
-    text-align: center;
-    margin: 10px 10px 10px 10px;
+    width: 212px;
+    height: 294px;
+    margin: 29px auto;
 }
 
-.fondo {
-    width: 200px;
-    height: 100px;
-    border: 2px solid green;
+.card-image {
+    width: 212px;
+    height: 294px;
+    background-size: cover;
+    background-image: url("https://bomdia.eu/luxemburgo/wp-content/uploads/sites/7/2016/07/rio2016.jpg");
+    border-radius: 9px;
+    box-shadow: 2px 2px 10px black;
+    position: absolute;
 }
 
-h1 {
+h3 {
     position: relative;
-    top: -93px;
-    left: 5px;
+    margin-top: 10px;
+    margin-bottom: 200px;
+    padding-left: 18px;
+    padding-right: 18px;
+    text-align: center;
+    height: 34px;
+}
+
+p {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+    display:flow-root;
+    text-align:start;
+    font-weight: bold;
 }
