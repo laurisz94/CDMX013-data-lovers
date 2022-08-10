@@ -32,7 +32,6 @@ svg{
     margin-left: 24px;
 }
 
-
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +43,7 @@ svg{
     margin: 29px auto;
 }
 
-.card.image {
+.card-image {
     width: 212px;
     height: 294px;
     background-size: cover;
@@ -54,7 +53,7 @@ svg{
     position: absolute;
 }
 
-h1 {
+h3 {
     position: relative;
     margin-top: 10px;
     margin-bottom: 200px;
