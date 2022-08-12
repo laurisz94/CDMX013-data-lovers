@@ -4,7 +4,7 @@ import data from './data/athletes/athletes.js';
 
 let information = data.athletes;
 
-let information2= data.athletes.map(item => {
+let information2= information.map(item => {
     return [item.name,item]
 })
 
