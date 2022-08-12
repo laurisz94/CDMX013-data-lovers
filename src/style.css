@@ -19,11 +19,19 @@ nav{
     position: relative;
     /*background: linear-gradient(90deg, rgba(217,105,214,0.9528186274509804) 0%, rgba(253,29,29,0.9640231092436975) 50%, rgba(252,176,69,1) 88%);*/
 }
+.fondo {
+    width: 1440px;
+    height: 179px;
+    position: absolute;
+    opacity: 0.6;
+
+}
 
 .logo {
     width: 275px;
     height: 179px;
     position: absolute;
+    padding: 10px;
     margin-left: 98px;
 }
 
@@ -53,10 +61,29 @@ svg{
     position: absolute;
 }
 
+.card-opacidad {
+    width: 187px;
+    height: 270px;
+    background-color: white;
+    opacity: 0.7;
+    margin: 13px;
+    position: absolute;
+    border-radius: 9px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 46px ;
+    border-radius: 180px;
+}
+
 h3 {
     position: relative;
     margin-top: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 180px;
     padding-left: 18px;
     padding-right: 18px;
     text-align: center;
@@ -65,9 +92,11 @@ h3 {
 
 p {
     position: relative;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 19px;
+    padding-right: 19px;
     display:flow-root;
-    text-align:start;
-    font-weight: bold;
+    text-align:center;
+    font-weight:500;
+    font-size: 17px;
+
 }
