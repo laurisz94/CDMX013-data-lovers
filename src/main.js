@@ -3,8 +3,29 @@
 import data from './data/athletes/athletes.js';
 
 let information = data.athletes;
+let information2= information.map(item => {
+    return [item.name,item]
+})
 
-information.forEach(athletes => { 
+let athletesNoDuplicates = new Map(information2);
+let atheletesNew= [...athletesNoDuplicates.values()];
+console.log(atheletesNew);
+//const unicos = []*/
+
+//function calcularMedallas (datos) {
+    //console.log(datos)
+    //let atletasMedallas = []
+
+ //datos.forEach(atleta => {
+    //if (athletasMedallas no existe el atleta) {
+        //empujar a atletasMEDALLAS{nombre:¨atleta.name, medallas:¨[]}
+    //}
+ //})   
+//}
+
+//calcularMedallas(information)
+
+atheletesNew.forEach(athletes => { 
     if(athletes.gender == 'F') {
         const html = `
         <div class="card">
