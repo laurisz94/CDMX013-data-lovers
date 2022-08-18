@@ -1,33 +1,49 @@
 /* eslint-disable no-undef */
-//import {} from './data.js';
-
+import {filterData} from './data.js';
 import data from './data/athletes/athletes.js';
+import generadorHTML from './generadorHTML.js'
+
 
 // Variables
-const iconHam = document.querySelector('.icon');
-const menu = document.querySelector('.menu');
-const filterFem = document.querySelector('.filter_female');
-// Variables para eliminar duplicados
+const selectGender = document.querySelector('#gender')
+const selectSport = document.querySelector('.sport')
+const selectCountry = document.querySelector('.team')
+
+// Renderizar Data
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
 const athletesNoDuplicates = new Map(information);
 const athletesNew = [...athletesNoDuplicates.values()];
 
-// Eventos
-iconHam.addEventListener('click', toogleMenu);
-filterFem.addEventListener('click', filter);
 
+let html =''
+
+athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
+container.insertAdjacentHTML('afterbegin', html);
 
 //Funciones
-function toogleMenu() {
-    menu.classList.toggle('inactive')
-}
+
+selectGender.addEventListener('change', (e) => {
+    html =''
+
+
+
+    e.target.value
+    let femaleFilter = filterData(athletesNew)
+    femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
+    
+container.insertAdjacentHTML('afterbegin', html);
+
+})
+
+/*
+
 function filter() {
-    menu.classList.toggle('inactive')
-    const element = document.getElementById('container');
+    const element = document.querySelector('#container');
     element.innerHTML='';
 
-    let filterData = athletesNew.filter(person => person.gender == "F")
-    filterData.forEach(fem => {
+    
+    femaleFilter.forEach(fem => {
         if(fem.gender == 'F') {
             const html = `
             <div class="card" id="container_male">
@@ -44,45 +60,8 @@ function filter() {
         }
     
     });
-}
+}*/
 
-
-
-
-
-athletesNew.forEach(athletes => {
-    if (athletes.gender == 'F') {
-        const html = `
-        <div class="card" id="container_male">
-        <div class="card-image"></div>
-        <div class="card-opacidad"></div>
-            <img src="./imagenes/sportswear-svgrepo-com.svg" alt="avatar-female" class="avatar">
-                <h4>${athletes.name.toUpperCase()}</h4>
-                <p>Team: ${athletes.team}</p>
-                <p>Sport: ${athletes.sport}</p>
-        </div>
-            `
-
-        container.insertAdjacentHTML('afterbegin', html);
-    }
-});
-
-athletesNew.forEach(athletes => {
-    if (athletes.gender == 'M') {
-        const html = `
-        <div class="card">
-        <div class="card-image"></div>
-        <div class="card-opacidad"></div>
-            <img src="./imagenes/sportswear-svgrepo-com (1).svg" alt="avatar-male" class="avatar">
-                <h4>${athletes.name.toUpperCase()}</h4>
-                <p>Team: ${athletes.team}</p>
-            <p>Sport: ${athletes.sport}</p>
-        </div>
-            `
-        container.insertAdjacentHTML('afterbegin', html)
-    }
-
-});
 
 
 //const unicos = []*/

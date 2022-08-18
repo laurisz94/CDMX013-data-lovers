@@ -14,30 +14,28 @@
 
       <img src="./imagenes/1200px-Rio_2016_logo.svg.png" alt="logo-rio" class="logo">
 
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="52" height="52"
-        viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
+      <section class="dropdown_menu">
+        <select id="gender" class="dropdown_menu">
+          <option class="option" value="all">All Gender</option>
+          <option class="option" value="female">Female</option>
+          <option class="option" value="male">Male</option>
+        </select>
 
+        <select id="sport" class="dropdown_menu">
+          <option class="option" value="all">All Sports</option>
+          <option class="option" value="rowing">Rowing</option>
+          <option class="option" value="gymnastics">Gymnastics</option>
+          <option class="option" value="taekwondo">Taekwondo</option>
+        </select>
 
-      <div class="menu inactive">
-        <ul>
-          <li>
-            Show All
-          </li>
-          <li class="filter_female">
-            Female
-          </li>
-          <li>
-            Male
-          </li>
-        </ul>
-
-      </div>
+        <select id="team" class="dropdown_menu">
+          <option class="option" value="all">All Countrys</option>
+          <option class="option" value="italy">Italy</option>
+          <option class="option" value="iran">Iran</option>
+          <option class="option" value="russia">Russia</option>
+          <option class="option" value="australia">Australia</option>
+        </select>
+      </section>
 
     </nav>
   </header>

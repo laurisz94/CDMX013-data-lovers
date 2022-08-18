@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
-export const filterData = (data, condition ) => {
-  return data.filter(condition);
+export const filterData = (data ) => {
+  return data.filter( person => person.gender == "F");
   
 };
 
