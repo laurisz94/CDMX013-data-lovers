@@ -26,8 +26,6 @@ container.insertAdjacentHTML('afterbegin', html);
 selectGender.addEventListener('change', (e) => {
     html =''
 
-
-
     e.target.value
     let femaleFilter = filterData(athletesNew)
     femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
