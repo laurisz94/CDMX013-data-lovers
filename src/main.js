@@ -16,6 +16,25 @@ const information = data.athletes.map(athlete => [athlete.name, athlete]);
 const athletesNoDuplicates = new Map(information);
 const athletesNew = [...athletesNoDuplicates.values()];
 
+let html =''
+
+athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
+container.insertAdjacentHTML('afterbegin', html);
+
+//Funciones
+
+selectGender.addEventListener('change', (e) => {
+    html =''
+
+    e.target.value
+    let femaleFilter = filterData(athletesNew)
+    femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
+    
+container.insertAdjacentHTML('afterbegin', html);
+
+})
+
 // HTML
 let html =''
 
@@ -30,9 +49,11 @@ selectGender.addEventListener('change', (e) => {
 
     let typeGender = filterGender(e.target.value, athletesNew)
 
+
     //console.log(filterGender(e.target.value, athletesNew));
 
     typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+
 
     //console.log(typeGender)
 container.insertAdjacentHTML('afterbegin', html);

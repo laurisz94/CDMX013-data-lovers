@@ -7,5 +7,4 @@ export const filterSport = (sport, data ) => data.filter (athletes => athletes.s
 export const filterTeam= (team, data ) => data.filter (athletes => athletes.team == team);
 
 
-
 //donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.
