@@ -16,7 +16,7 @@ const generradorHTML =(athletes)=>{
     } else {
          html = `
         <div class="card">
-        <div class="card-image"></div>
+        <div class="card-image">h</div>
         <div class="card-opacidad"></div>
             <img src="./imagenes/sportswear-svgrepo-com (1).svg" alt="avatar-male" class="avatar">
                 <h4>${athletes.name.toUpperCase()}</h4>
