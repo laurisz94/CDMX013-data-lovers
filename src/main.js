@@ -84,4 +84,3 @@ container.insertAdjacentHTML('afterbegin', html);
 //}
 
 //calcularMedallas(information)
-
