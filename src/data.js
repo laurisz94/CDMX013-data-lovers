@@ -1,13 +1,11 @@
-// estas funciones son de ejemplo
+// estas funciones son de ejemplo;
 
-export const filterData = (data ) => {
-  return data.filter( person => person.gender == "F");
-  
-};
+export const filterGender = (gender, data ) => data.filter (athletes => athletes.gender == gender);
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+export const filterSport = (sport, data ) => data.filter (athletes => athletes.sport == sport);
+
+export const filterTeam= (team, data ) => data.filter (athletes => athletes.team == team);
+
 
 
 //donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.

@@ -1,66 +1,73 @@
 /* eslint-disable no-undef */
-import {filterData} from './data.js';
+import {filterGender, filterSport, filterTeam} from './data.js';
 import data from './data/athletes/athletes.js';
 import generadorHTML from './generadorHTML.js'
 
 
 // Variables
 const selectGender = document.querySelector('#gender')
-const selectSport = document.querySelector('.sport')
-const selectCountry = document.querySelector('.team')
+const selectSport = document.querySelector('#sport')
+const selectTeam = document.querySelector('#team')
+const element = document.querySelector('#container')
 
-// Renderizar Data
+// Renderizar Data 
+// Eliminar duplicados
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
 const athletesNoDuplicates = new Map(information);
 const athletesNew = [...athletesNoDuplicates.values()];
 
-
+// HTML
 let html =''
 
 athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
 container.insertAdjacentHTML('afterbegin', html);
 
-//Funciones
-
+//Filtrado Genero con evento
 selectGender.addEventListener('change', (e) => {
+    element.innerHTML =''
     html =''
 
-    e.target.value
-    let femaleFilter = filterData(athletesNew)
-    femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
-    
+    let typeGender = filterGender(e.target.value, athletesNew)
+
+    //console.log(filterGender(e.target.value, athletesNew));
+
+    typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+
+    //console.log(typeGender)
 container.insertAdjacentHTML('afterbegin', html);
 
-})
+});
 
-/*
+//Filtrado de Deporte con Evento
+selectSport.addEventListener('change', (e) => {
+    element.innerHTML =''
+    html =''
 
-function filter() {
-    const element = document.querySelector('#container');
-    element.innerHTML='';
+    let typeSport = filterSport(e.target.value, athletesNew)
 
-    
-    femaleFilter.forEach(fem => {
-        if(fem.gender == 'F') {
-            const html = `
-            <div class="card" id="container_male">
-            <div class="card-image"></div>
-            <div class="card-opacidad"></div>
-                <img src="./imagenes/sportswear-svgrepo-com.svg" alt="avatar-female" class="avatar">
-                    <h4>${fem.name.toUpperCase()}</h4>
-                    <p>Team: ${fem.team}</p>
-                    <p>Sport: ${fem.sport}</p>
-            </div>
-                `
-    
-            container.insertAdjacentHTML('afterbegin', html);
-        }
-    
-    });
-}*/
+    //console.log(filterSport(e.target.value, athletesNew));
 
+    typeSport.forEach(athletes =>html+=generadorHTML(athletes));
 
+    //console.log(typeSport)
+container.insertAdjacentHTML('afterbegin', html);
+});
+
+//Filtrado de Equipo por Evento
+selectTeam.addEventListener('change', (e) => {
+    element.innerHTML =''
+    html =''
+
+    let typeTeam = filterTeam(e.target.value, athletesNew)
+
+    //console.log(filterTeam(e.target.value, athletesNew));
+
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+
+    //console.log(typeTeam)
+container.insertAdjacentHTML('afterbegin', html);
+});
 
 //const unicos = []*/
 
