@@ -1,3 +1,4 @@
+
 /* eslint-disable no-undef */
 import {filterGender, filterSport, filterTeam, orderName} from './data.js';
 //import athletes from './data/athletes/athletes.js';
@@ -32,11 +33,8 @@ selectGender.addEventListener('change', (e) => {
 
     let typeGender = filterGender(e.target.value, athletesNew)
 
-    //console.log(filterGender(e.target.value, athletesNew));
-
     typeGender.forEach(athletes =>html+=generadorHTML(athletes));
 
-    //console.log(typeGender)
 container.insertAdjacentHTML('afterbegin', html);
 
 });
@@ -48,11 +46,10 @@ selectSport.addEventListener('change', (e) => {
 
     let typeSport = filterSport(e.target.value, athletesNew)
 
-    //console.log(filterSport(e.target.value, athletesNew));
 
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
 
-    //console.log(typeSport)
+
 container.insertAdjacentHTML('afterbegin', html);
 });
 
@@ -71,6 +68,7 @@ selectTeam.addEventListener('change', (e) => {
 container.insertAdjacentHTML('afterbegin', html);
 });
 
+//Funciones para ordenado ascendete y descendente
 order.addEventListener('change', (e) => {
     element.innerHTML = ''
     html = ''
@@ -78,9 +76,6 @@ order.addEventListener('change', (e) => {
     let orderAthletes = orderName(e.target.value, athletesNew);
 
     orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
-    //console.log(orderName(e.target.value));
-
-    //console.log(orderAthletes)
 
     container.insertAdjacentHTML('afterbegin', html);
 })
@@ -100,8 +95,3 @@ order.addEventListener('change', (e) => {
 //}
 
 //calcularMedallas(information)
-
-
-
-
-
