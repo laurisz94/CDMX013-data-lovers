@@ -16,3 +16,4 @@ export const orderName = (name, data ) => {
     return data.sort ((a,b) => a.name > b.name ? -1:1)
   }
 };
+//donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.
