@@ -1,5 +1,7 @@
+
 /* eslint-disable no-undef */
-import {filterGender, filterSport, filterTeam} from './data.js';
+import {filterGender, filterSport, filterTeam, orderName} from './data.js';
+//import athletes from './data/athletes/athletes.js';
 import data from './data/athletes/athletes.js';
 import generadorHTML from './generadorHTML.js'
 
@@ -9,31 +11,13 @@ const selectGender = document.querySelector('#gender')
 const selectSport = document.querySelector('#sport')
 const selectTeam = document.querySelector('#team')
 const element = document.querySelector('#container')
+const order = document.querySelector('#order')
 
 // Renderizar Data 
 // Eliminar duplicados
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
 const athletesNoDuplicates = new Map(information);
 const athletesNew = [...athletesNoDuplicates.values()];
-
-let html =''
-
-athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-
-container.insertAdjacentHTML('afterbegin', html);
-
-//Funciones
-
-selectGender.addEventListener('change', (e) => {
-    html =''
-
-    e.target.value
-    let femaleFilter = filterData(athletesNew)
-    femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
-    
-container.insertAdjacentHTML('afterbegin', html);
-
-})
 
 // HTML
 let html =''
@@ -49,13 +33,8 @@ selectGender.addEventListener('change', (e) => {
 
     let typeGender = filterGender(e.target.value, athletesNew)
 
-
-    //console.log(filterGender(e.target.value, athletesNew));
-
     typeGender.forEach(athletes =>html+=generadorHTML(athletes));
 
-
-    //console.log(typeGender)
 container.insertAdjacentHTML('afterbegin', html);
 
 });
@@ -67,11 +46,8 @@ selectSport.addEventListener('change', (e) => {
 
     let typeSport = filterSport(e.target.value, athletesNew)
 
-    //console.log(filterSport(e.target.value, athletesNew));
-
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
 
-    //console.log(typeSport)
 container.insertAdjacentHTML('afterbegin', html);
 });
 
@@ -80,7 +56,7 @@ selectTeam.addEventListener('change', (e) => {
     element.innerHTML =''
     html =''
 
-    let typeTeam = filterTeam(e.target.value, athletesNew)
+    let typeTeam = filterTeam(e.target.value, athletesNew);
 
     //console.log(filterTeam(e.target.value, athletesNew));
 
@@ -89,6 +65,17 @@ selectTeam.addEventListener('change', (e) => {
     //console.log(typeTeam)
 container.insertAdjacentHTML('afterbegin', html);
 });
+
+order.addEventListener('change', (e) => {
+    element.innerHTML = ''
+    html = ''
+
+    let orderAthletes = orderName(e.target.value, athletesNew);
+
+    orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+
+    container.insertAdjacentHTML('afterbegin', html);
+})
 
 //const unicos = []*/
 
