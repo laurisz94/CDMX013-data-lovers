@@ -38,7 +38,8 @@ nav{
 
 #gender,
 #sport,
-#team{
+#team
+#order{
     position: absolute;
     margin-top: 20px;
     margin-left: 700px;
