@@ -6,6 +6,13 @@ export const filterSport = (sport, data ) => data.filter (athletes => athletes.s
 
 export const filterTeam= (team, data ) => data.filter (athletes => athletes.team == team);
 
+export const orderName = (name, data ) => {
+  
+  if (name === "AZ") {
+    return data.sort((a,b) => a.name < b.name ? -1:1) ;
+  }
 
-
-//donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.
+  if (name === "ZA") {
+    return data.sort ((a,b) => a.name > b.name ? -1:1)
+  }
+};
