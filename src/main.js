@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-import {filterGender, filterSport, filterTeam} from './data.js';
+import {filterGender, filterSport, filterTeam, orderName} from './data.js';
+//import athletes from './data/athletes/athletes.js';
 import data from './data/athletes/athletes.js';
 import generadorHTML from './generadorHTML.js'
 
@@ -9,6 +10,7 @@ const selectGender = document.querySelector('#gender')
 const selectSport = document.querySelector('#sport')
 const selectTeam = document.querySelector('#team')
 const element = document.querySelector('#container')
+const order = document.querySelector('#order')
 
 // Renderizar Data 
 // Eliminar duplicados
@@ -59,7 +61,7 @@ selectTeam.addEventListener('change', (e) => {
     element.innerHTML =''
     html =''
 
-    let typeTeam = filterTeam(e.target.value, athletesNew)
+    let typeTeam = filterTeam(e.target.value, athletesNew);
 
     //console.log(filterTeam(e.target.value, athletesNew));
 
@@ -68,6 +70,20 @@ selectTeam.addEventListener('change', (e) => {
     //console.log(typeTeam)
 container.insertAdjacentHTML('afterbegin', html);
 });
+
+order.addEventListener('change', (e) => {
+    element.innerHTML = ''
+    html = ''
+
+    let orderAthletes = orderName(e.target.value, athletesNew);
+
+    orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+    //console.log(orderName(e.target.value));
+
+    //console.log(orderAthletes)
+
+    container.insertAdjacentHTML('afterbegin', html);
+})
 
 //const unicos = []*/
 

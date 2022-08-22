@@ -38,7 +38,8 @@ nav{
 
 #gender,
 #sport,
-#team{
+#team, 
+#order{
     position: absolute;
     margin-top: 20px;
     margin-left: 700px;
@@ -59,8 +60,10 @@ nav{
     margin-left: 1100px;
 }
 
-
-
+#order {
+    margin-left: 880px;
+    margin-top: 95px;
+}
 .option {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
