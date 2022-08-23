@@ -46,7 +46,9 @@ selectSport.addEventListener('change', (e) => {
 
     let typeSport = filterSport(e.target.value, athletesNew)
 
+
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+
 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -66,6 +68,7 @@ selectTeam.addEventListener('change', (e) => {
 container.insertAdjacentHTML('afterbegin', html);
 });
 
+//Funciones para ordenado ascendete y descendente
 order.addEventListener('change', (e) => {
     element.innerHTML = ''
     html = ''

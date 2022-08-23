@@ -1,3 +1,4 @@
+
 /* eslint-disable no-undef */
 import { filterGender, filterSport, filterTeam} from '../src/data.js';
 import data from '../src/data/athletes/athletes.js'
