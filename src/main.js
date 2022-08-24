@@ -29,10 +29,12 @@ container.insertAdjacentHTML('afterbegin', html);
 selectGender.addEventListener('change', (e) => {
     element.innerHTML =''
     html =''
+    
 
     let typeGender = filterGender(e.target.value, athletesNew)
 
     typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
 container.insertAdjacentHTML('afterbegin', html);
 
@@ -46,6 +48,8 @@ selectSport.addEventListener('change', (e) => {
     let typeSport = filterSport(e.target.value, athletesNew)
 
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -60,6 +64,9 @@ selectTeam.addEventListener('change', (e) => {
     //console.log(filterTeam(e.target.value, athletesNew));
 
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
 
     //console.log(typeTeam)
 container.insertAdjacentHTML('afterbegin', html);
@@ -72,6 +79,8 @@ order.addEventListener('change', (e) => {
     let orderAthletes = orderName(e.target.value, athletesNew);
 
     orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
 
     container.insertAdjacentHTML('afterbegin', html);
 })
