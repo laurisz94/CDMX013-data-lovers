@@ -62,4 +62,3 @@ describe('orderName', () => {
   it('returns true for sort by `ZA`', () => {
     expect( orderName("ZA", athletesNew)).toHaveLength(1855);
   });
-}); 

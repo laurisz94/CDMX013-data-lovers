@@ -29,11 +29,20 @@ container.insertAdjacentHTML('afterbegin', html);
 selectGender.addEventListener('change', (e) => {
     element.innerHTML =''
     html =''
+    
 
     let typeGender = filterGender(e.target.value, athletesNew)
-
+if (e.target.value === "F") {
     typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+    }
 
+if (e.target.value === "M") { 
+    typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+ if (e.target.value === "all")  {
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+ }
 container.insertAdjacentHTML('afterbegin', html);
 
 });
@@ -44,8 +53,19 @@ selectSport.addEventListener('change', (e) => {
     html =''
 
     let typeSport = filterSport(e.target.value, athletesNew)
-
+if (e.target.value === "Rowing"){
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+ if (e.target.value === "Gymnastics"){
+        typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+        }
+
+if (e.target.value === "Taekwondo"){
+            typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+            }
+if (e.target.value === "all")            
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -58,8 +78,25 @@ selectTeam.addEventListener('change', (e) => {
     let typeTeam = filterTeam(e.target.value, athletesNew);
 
     //console.log(filterTeam(e.target.value, athletesNew));
-
+if (e.target.value === "Italy") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+if (e.target.value === "Iran") {
+        typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+        }
+
+if (e.target.value === "Russia") {
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+            }
+
+if (e.target.value === "Australia") {
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+     }
+
+if (e.target.value === "all") {
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+    }
 
     //console.log(typeTeam)
 container.insertAdjacentHTML('afterbegin', html);
@@ -70,8 +107,16 @@ order.addEventListener('change', (e) => {
     html = ''
 
     let orderAthletes = orderName(e.target.value, athletesNew);
-
+if (e.target.value === "AZ") {
     orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+if (e.target.value === "ZA") {
+    orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+        }
+
+if (e.target.value === "order")
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
     container.insertAdjacentHTML('afterbegin', html);
-})
+    });
