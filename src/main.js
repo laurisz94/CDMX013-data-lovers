@@ -1,4 +1,3 @@
-
 /* eslint-disable no-undef */
 import {filterGender, filterSport, filterTeam, orderName} from './data.js';
 //import athletes from './data/athletes/athletes.js';
@@ -46,9 +45,7 @@ selectSport.addEventListener('change', (e) => {
 
     let typeSport = filterSport(e.target.value, athletesNew)
 
-
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
-
 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -68,7 +65,6 @@ selectTeam.addEventListener('change', (e) => {
 container.insertAdjacentHTML('afterbegin', html);
 });
 
-//Funciones para ordenado ascendete y descendente
 order.addEventListener('change', (e) => {
     element.innerHTML = ''
     html = ''
@@ -79,19 +75,3 @@ order.addEventListener('change', (e) => {
 
     container.insertAdjacentHTML('afterbegin', html);
 })
-
-//const unicos = []*/
-
-//function calcularMedallas (datos) {
-//console.log(datos)
-
-//let atletasMedallas = []
-
-//datos.forEach(atleta => {
-//if (athletasMedallas no existe el atleta) {
-//empujar a atletasMEDALLAS{nombre:¨atleta.name, medallas:¨[]}
-//}
-//})   
-//}
-
-//calcularMedallas(information)
