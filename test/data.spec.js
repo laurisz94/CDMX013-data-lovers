@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { filterGender, filterSport, filterTeam} from '../src/data.js';
+import { filterGender, filterSport, filterTeam, orderName} from '../src/data.js';
 import data from '../src/data/athletes/athletes.js'
 
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
@@ -23,14 +23,43 @@ describe('filterSport', () => {
   it('is a function', () => {
     expect(typeof filterSport).toBe('function');
   });
-
-  //it('returns `anotherExample`', () => {
-    //expect(anotherExample()).toBe('OMG');
-  //});
+  it('return true for sport: Rowing', () => {
+    expect(filterSport("Rowing", athletesNew)).toHaveLength(144)
+});
+it('return true for sport: Gymnastics', () => {
+  expect(filterSport("Gymnastics", athletesNew)).toHaveLength(46)
+});
+it('return true for sport: Taekwondo', () => {
+  expect(filterSport("Taekwondo", athletesNew)).toHaveLength(32)
+});
 });
 
 describe('filterTeam', () => {
   it('is a function', () => {
     expect(typeof filterTeam).toBe('function');
   });
+  it('return true for team: Italy', () => {
+    expect(filterTeam("Italy", athletesNew)).toHaveLength(67)
+  });
+  it('return true for team: Iran', () => {
+    expect(filterTeam("Iran", athletesNew)).toHaveLength(8)
+  });
+  it('return true for team: Russia', () => {
+    expect(filterTeam("Russia", athletesNew)).toHaveLength(101)
+  });
+  it('return true for team: Australia', () => {
+    expect(filterTeam("Australia", athletesNew)).toHaveLength(71)
+  });
 });
+
+describe('orderName', () => {
+  it('is a function', () => {
+    expect(typeof orderName).toBe('function');
+  });
+  it('returns true for sort by `AZ`', () => {
+    expect( orderName("AZ", athletesNew)).toHaveLength(1855);
+  });
+  it('returns true for sort by `ZA`', () => {
+    expect( orderName("ZA", athletesNew)).toHaveLength(1855);
+  });
+});    
