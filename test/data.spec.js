@@ -1,4 +1,3 @@
-
 /* eslint-disable no-undef */
 import { filterGender, filterSport, filterTeam, orderName} from '../src/data.js';
 import data from '../src/data/athletes/athletes.js'
@@ -63,4 +62,3 @@ describe('orderName', () => {
   it('returns true for sort by `ZA`', () => {
     expect( orderName("ZA", athletesNew)).toHaveLength(1855);
   });
-});                                                                 
