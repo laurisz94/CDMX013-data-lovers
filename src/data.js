@@ -13,8 +13,8 @@ export const orderName = (name, data ) => {
   }
 
   if (name === "ZA") {
-    return data.sort ((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? -1:1);
+    return data.sort ((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? -1:1)
   }
+
 };
 //donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.
-

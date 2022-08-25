@@ -119,4 +119,4 @@ if (e.target.value === "order")
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
     container.insertAdjacentHTML('afterbegin', html);
-    });
+    }); 
