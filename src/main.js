@@ -67,7 +67,6 @@ if (e.target.value === "Taekwondo"){
 if (e.target.value === "all")            
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
-
 container.insertAdjacentHTML('afterbegin', html);
 });
 
@@ -120,4 +119,4 @@ if (e.target.value === "order")
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
     container.insertAdjacentHTML('afterbegin', html);
-})
+    });
