@@ -1,13 +1,20 @@
-// estas funciones son de ejemplo
+// estas funciones son de ejemplo;
 
-export const filterData = (data ) => {
-  return data.filter( person => person.gender == "F");
+export const filterGender = (gender, data ) => data.filter (athletes => athletes.gender == gender);
+
+export const filterSport = (sport, data ) => data.filter (athletes => athletes.sport == sport);
+
+export const filterTeam= (team, data ) => data.filter (athletes => athletes.team == team);
+
+export const orderName = (name, data ) => {
   
+  if (name === "AZ") {
+    return data.sort((a,b) => a.name.toUpperCase() < b.name.toUpperCase() ? -1:1) ;
+  }
+
+  if (name === "ZA") {
+    return data.sort ((a,b) => a.name.toUpperCase() > b.name.toUpperCase() ? -1:1)
+  }
+
 };
-
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-
 //donde se va a realizar las funciones de filtrado, busqueda, ordernar, estadistica.

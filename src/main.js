@@ -1,84 +1,122 @@
 /* eslint-disable no-undef */
-import {filterData} from './data.js';
+import {filterGender, filterSport, filterTeam, orderName} from './data.js';
+//import athletes from './data/athletes/athletes.js';
 import data from './data/athletes/athletes.js';
 import generadorHTML from './generadorHTML.js'
 
 
 // Variables
 const selectGender = document.querySelector('#gender')
-const selectSport = document.querySelector('.sport')
-const selectCountry = document.querySelector('.team')
+const selectSport = document.querySelector('#sport')
+const selectTeam = document.querySelector('#team')
+const element = document.querySelector('#container')
+const order = document.querySelector('#order')
 
-// Renderizar Data
+// Renderizar Data 
+// Eliminar duplicados
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
 const athletesNoDuplicates = new Map(information);
 const athletesNew = [...athletesNoDuplicates.values()];
 
-
+// HTML
 let html =''
 
 athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
 container.insertAdjacentHTML('afterbegin', html);
 
-//Funciones
-
+//Filtrado Genero con evento
 selectGender.addEventListener('change', (e) => {
+    element.innerHTML =''
     html =''
-
-    e.target.value
-    let femaleFilter = filterData(athletesNew)
-    femaleFilter.forEach(athletes =>html+=generadorHTML(athletes));
     
+
+    let typeGender = filterGender(e.target.value, athletesNew)
+if (e.target.value === "F") {
+    typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+if (e.target.value === "M") { 
+    typeGender.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+ if (e.target.value === "all")  {
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+ }
 container.insertAdjacentHTML('afterbegin', html);
 
-})
+});
 
-/*
+//Filtrado de Deporte con Evento
+selectSport.addEventListener('change', (e) => {
+    element.innerHTML =''
+    html =''
 
-function filter() {
-    const element = document.querySelector('#container');
-    element.innerHTML='';
+    let typeSport = filterSport(e.target.value, athletesNew)
+if (e.target.value === "Rowing"){
+    typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+    }
 
-    
-    femaleFilter.forEach(fem => {
-        if(fem.gender == 'F') {
-            const html = `
-            <div class="card" id="container_male">
-            <div class="card-image"></div>
-            <div class="card-opacidad"></div>
-                <img src="./imagenes/sportswear-svgrepo-com.svg" alt="avatar-female" class="avatar">
-                    <h4>${fem.name.toUpperCase()}</h4>
-                    <p>Team: ${fem.team}</p>
-                    <p>Sport: ${fem.sport}</p>
-            </div>
-                `
-    
-            container.insertAdjacentHTML('afterbegin', html);
+ if (e.target.value === "Gymnastics"){
+        typeSport.forEach(athletes =>html+=generadorHTML(athletes));
         }
-    
-    });
-}*/
 
+if (e.target.value === "Taekwondo"){
+            typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+            }
+if (e.target.value === "all")            
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
+container.insertAdjacentHTML('afterbegin', html);
+});
 
-//const unicos = []*/
+//Filtrado de Equipo por Evento
+selectTeam.addEventListener('change', (e) => {
+    element.innerHTML =''
+    html =''
 
-//function calcularMedallas (datos) {
-//console.log(datos)
+    let typeTeam = filterTeam(e.target.value, athletesNew);
 
-//let atletasMedallas = []
+    //console.log(filterTeam(e.target.value, athletesNew));
+if (e.target.value === "Italy") {
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    }
 
-//datos.forEach(atleta => {
-//if (athletasMedallas no existe el atleta) {
-//empujar a atletasMEDALLAS{nombre:¨atleta.name, medallas:¨[]}
-//}
-//})   
-//}
+if (e.target.value === "Iran") {
+        typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+        }
 
-//calcularMedallas(information)
+if (e.target.value === "Russia") {
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+            }
 
+if (e.target.value === "Australia") {
+    typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+     }
 
+if (e.target.value === "all") {
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+    }
 
+    //console.log(typeTeam)
+container.insertAdjacentHTML('afterbegin', html);
+});
 
+order.addEventListener('change', (e) => {
+    element.innerHTML = ''
+    html = ''
 
+    let orderAthletes = orderName(e.target.value, athletesNew);
+if (e.target.value === "AZ") {
+    orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+    }
+
+if (e.target.value === "ZA") {
+    orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
+        }
+
+if (e.target.value === "order")
+    athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+
+    container.insertAdjacentHTML('afterbegin', html);
+    }); 
