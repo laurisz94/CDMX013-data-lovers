@@ -53,7 +53,7 @@ if (e.target.value === "M") {
 container.insertAdjacentHTML('afterbegin', html);
 
 });
-console.log(averageData(athletesNew).toFixed(0))
+
 //Filtrado de Deporte con Evento
 selectSport.addEventListener('change', (e) => {
     element.innerHTML =''
@@ -62,18 +62,24 @@ selectSport.addEventListener('change', (e) => {
     let typeSport = filterSport(e.target.value, athletesNew)
 if (e.target.value === "Rowing"){
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+
+    calcular.innerHTML = 'Número de atletas que compiten en Rowing: ' + typeSport.length
     }
 
  if (e.target.value === "Gymnastics"){
         typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+
+        calcular.innerHTML = 'Número de atletas que compiten en Gymnastics: ' + typeSport.length
         }
 
 if (e.target.value === "Taekwondo"){
             typeSport.forEach(athletes =>html+=generadorHTML(athletes));
+            calcular.innerHTML = 'Número de atletas que compiten en Taekwondo: ' + typeSport.length
             }
-if (e.target.value === "all")            
+if (e.target.value === "all"){           
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-
+    calcular.innerHTML = 'Número de atletas que compiten en Olimpiadas Rio 2016: ' + typeSport.length
+} 
 container.insertAdjacentHTML('afterbegin', html);
 });
 
@@ -87,22 +93,27 @@ selectTeam.addEventListener('change', (e) => {
     //console.log(filterTeam(e.target.value, athletesNew));
 if (e.target.value === "Italy") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    calcular.innerHTML ='Número de atletas que compiten en el equipo de Italy: ' + typeTeam.length
     }
 
 if (e.target.value === "Iran") {
         typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+        calcular.innerHTML ='Número de atletas que compiten en el equipo de Iran: ' + typeTeam.length
         }
 
 if (e.target.value === "Russia") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    calcular.innerHTML ='Número de atletas que compiten en el equipo de Russia: ' + typeTeam.length
             }
 
 if (e.target.value === "Australia") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
+    calcular.innerHTML ='Número de atletas que compiten en el equipo de Australia: ' + typeTeam.length
      }
 
 if (e.target.value === "all") {
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
+    calcular.innerHTML ='Número de atletas que compiten en Olimpiadas Rio 2016: ' + typeTeam.length
     }
 
     //console.log(typeTeam)
@@ -112,6 +123,7 @@ container.insertAdjacentHTML('afterbegin', html);
 order.addEventListener('change', (e) => {
     element.innerHTML = ''
     html = ''
+    calcular.innerHTML = ''
 
     let orderAthletes = orderName(e.target.value, athletesNew);
 if (e.target.value === "AZ") {
@@ -122,8 +134,9 @@ if (e.target.value === "ZA") {
     orderAthletes.forEach(athletes =>html+=generadorHTML(athletes));
         }
 
-if (e.target.value === "order")
+if (e.target.value === "order"){
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
 
+    }
     container.insertAdjacentHTML('afterbegin', html);
     }); 
