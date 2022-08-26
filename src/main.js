@@ -78,7 +78,7 @@ if (e.target.value === "Taekwondo"){
             }
 if (e.target.value === "all"){           
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML = 'Number of athletes competing in the 2016 Rio Olympics:: ' + typeSport.length
+    calcular.innerHTML = 'Number of athletes competing in the 2016 Rio Olympics:: ' + athletesNew.length
 } 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -113,7 +113,7 @@ if (e.target.value === "Australia") {
 
 if (e.target.value === "all") {
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML ='Number of athletes competing in the 2016 Rio Olympics: ' + typeTeam.length
+    calcular.innerHTML ='Number of athletes competing in the 2016 Rio Olympics: ' + athletesNew.length
     }
 
     //console.log(typeTeam)
