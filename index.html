@@ -6,18 +6,23 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="src/style.css" />
 </head>
-
 <body>
   <header>
     <nav>
-      <img src="src/imagenes/fondo header.jpg" alt="fondo-rio" class="fondo">
+      <img src="./imagenes/fondo header.jpg" alt="fondo-rio" class="fondo">
 
-      <img src="src/imagenes/1200px-Rio_2016_logo.svg.png" alt="logo-rio" class="logo">
+      <img src="./imagenes/1200px-Rio_2016_logo.svg.png" alt="logo-rio" class="logo">
 
-      <section class="dropdown_menu">
+      <div id="dropdown_menus">
+
+        <select id="order" class="dropdown-menu">
+          <option class= "option" value="order">Sort for</option>
+          <option class= "option" value="AZ">A-Z</option>
+          <option class= "option" value="ZA">Z-A</option>
+        </select>
+
         <select id="gender" class="dropdown_menu">
           <option class="option" value="all">All Gender</option>
-
           <option class="option" value="F">Female</option>
           <option class="option" value="M">Male</option>
         </select>
@@ -36,20 +41,16 @@
           <option class="option" value="Iran">Iran</option>
           <option class="option" value="Russia">Russia</option>
           <option class="option" value="Australia">Australia</option>
-        
+
         </select>
 
-        <select id="order" class="dropdown-menu">
-          <option class= "option" value="order">Sort for</option>
-          <option class= "option" value="AZ">A-Z</option>
-          <option class= "option" value="ZA">Z-A</option>
-        </select>
-      </section>
+      </div>
 
     </nav>
   </header>
 
   <section>
+    <div id="average"></div>
     <div id="container">
     </div>
   </section>
@@ -59,7 +60,6 @@
 
 
   <footer>
-    Redes sociales
   </footer>
   <script src="src/main.js" type="module"></script>
 </body>
