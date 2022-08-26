@@ -98,7 +98,7 @@ svg{
 .card {
     width: 212px;
     height: 294px;
-    margin: 29px 20px;
+    margin: 29px auto;
 }
 
 .card-image {
