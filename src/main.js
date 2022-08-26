@@ -63,22 +63,22 @@ selectSport.addEventListener('change', (e) => {
 if (e.target.value === "Rowing"){
     typeSport.forEach(athletes =>html+=generadorHTML(athletes));
 
-    calcular.innerHTML = 'Número de atletas que compiten en Rowing: ' + typeSport.length
+    calcular.innerHTML = 'Number of athletes competing in Rowing: ' + typeSport.length
     }
 
  if (e.target.value === "Gymnastics"){
         typeSport.forEach(athletes =>html+=generadorHTML(athletes));
 
-        calcular.innerHTML = 'Número de atletas que compiten en Gymnastics: ' + typeSport.length
+        calcular.innerHTML = 'Number of athletes competing in Gymnastics:  ' + typeSport.length
         }
 
 if (e.target.value === "Taekwondo"){
             typeSport.forEach(athletes =>html+=generadorHTML(athletes));
-            calcular.innerHTML = 'Número de atletas que compiten en Taekwondo: ' + typeSport.length
+            calcular.innerHTML = 'Number of athletes competing in Taekwondo: : ' + typeSport.length
             }
 if (e.target.value === "all"){           
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML = 'Número de atletas que compiten en Olimpiadas Rio 2016: ' + typeSport.length
+    calcular.innerHTML = 'Number of athletes competing in the 2016 Rio Olympics:: ' + typeSport.length
 } 
 container.insertAdjacentHTML('afterbegin', html);
 });
@@ -93,27 +93,27 @@ selectTeam.addEventListener('change', (e) => {
     //console.log(filterTeam(e.target.value, athletesNew));
 if (e.target.value === "Italy") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML ='Número de atletas que compiten en el equipo de Italy: ' + typeTeam.length
+    calcular.innerHTML ='Number of athletes competing on the Italy team: ' + typeTeam.length
     }
 
 if (e.target.value === "Iran") {
         typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
-        calcular.innerHTML ='Número de atletas que compiten en el equipo de Iran: ' + typeTeam.length
+        calcular.innerHTML ='Number of athletes competing on the Iran team: ' + typeTeam.length
         }
 
 if (e.target.value === "Russia") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML ='Número de atletas que compiten en el equipo de Russia: ' + typeTeam.length
+    calcular.innerHTML ='Number of athletes competing on the Russia team: ' + typeTeam.length
             }
 
 if (e.target.value === "Australia") {
     typeTeam.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML ='Número de atletas que compiten en el equipo de Australia: ' + typeTeam.length
+    calcular.innerHTML ='Number of athletes competing on the Australia team: ' + typeTeam.length
      }
 
 if (e.target.value === "all") {
     athletesNew.forEach(athletes =>html+=generadorHTML(athletes));
-    calcular.innerHTML ='Número de atletas que compiten en Olimpiadas Rio 2016: ' + typeTeam.length
+    calcular.innerHTML ='Number of athletes competing in the 2016 Rio Olympics: ' + typeTeam.length
     }
 
     //console.log(typeTeam)
