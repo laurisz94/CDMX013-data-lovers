@@ -53,7 +53,7 @@ if (e.target.value === "M") {
 container.insertAdjacentHTML('afterbegin', html);
 
 });
-console.log(averageData(athletesNew).toFixed(0))
+//console.log(averageData(athletesNew).toFixed(0))
 //Filtrado de Deporte con Evento
 selectSport.addEventListener('change', (e) => {
     element.innerHTML =''

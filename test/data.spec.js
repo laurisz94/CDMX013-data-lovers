@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { filterGender, filterSport, filterTeam, orderName} from '../src/data.js';
+import { filterGender, filterSport, filterTeam, orderName, averageData} from '../src/data.js';
 import data from '../src/data/athletes/athletes.js'
 
 const information = data.athletes.map(athlete => [athlete.name, athlete]);
@@ -63,3 +63,24 @@ describe('orderName', () => {
     expect( orderName("ZA", athletesNew)).toHaveLength(1855);
   });
 });
+
+describe('averageData', () => {
+  it('is a function', () => {
+    expect(typeof averageData).toBe('function');
+  });
+  it('return the average is', () => {
+    const athletesShort = [
+      {
+        age: 21,
+      },
+      {
+        age: 28,
+      },
+      {
+        age: 25,
+      }
+    ]
+    expect(averageData(athletesShort)).toBe((21 + 28 + 25) / 3);
+  });
+});
+
