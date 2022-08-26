@@ -6,7 +6,7 @@ const generradorHTML =(athletes)=>{
         <div class="card-image"></div>
         <div class="card-opacidad"></div>
             <img src="./imagenes/sportswear-svgrepo-com.svg" alt="avatar-female" class="avatar">
-                <h4>${athletes.name.toUpperCase()}</h4>
+                <h4>${athletes.name}</h4>
                 <p>Team: ${athletes.team}</p>
                 <p>Sport: ${athletes.sport}</p>
         </div>
@@ -19,7 +19,7 @@ const generradorHTML =(athletes)=>{
         <div class="card-image"></div>
         <div class="card-opacidad"></div>
             <img src="./imagenes/sportswear-svgrepo-com (1).svg" alt="avatar-male" class="avatar">
-                <h4>${athletes.name.toUpperCase()}</h4>
+                <h4>${athletes.name}</h4>
                 <p>Team: ${athletes.team}</p>
             <p>Sport: ${athletes.sport}</p>
         </div>

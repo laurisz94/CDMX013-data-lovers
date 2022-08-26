@@ -10,7 +10,7 @@ describe('filterGender', () => {
   it('is a function', () => {
     expect(typeof filterGender).toBe('function');
   });
-  it('return true for "M"', () => {
+  it('return true for "F"', () => {
     expect(filterGender("F", athletesNew)).toHaveLength(876);
   });
   it('return true for "M"', () => {
@@ -82,5 +82,6 @@ describe('averageData', () => {
     ]
     expect(averageData(athletesShort)).toBe((21 + 28 + 25) / 3);
   });
+
 });
 
