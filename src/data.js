@@ -20,3 +20,4 @@ export const averageData = (data) => {
   let sum = data.reduce((previous, current) => previous + current.age, 0);
   let promData = sum / data.length;
   return promData;
+  }
