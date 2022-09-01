@@ -55,6 +55,7 @@ selectSport.addEventListener('change', (e) => {
     html = ''
 
     let typeSport = filterSport(e.target.value, athletesNew)
+
     if (e.target.value === 'Rowing') {
         typeSport.forEach(athletes => html += generadorHTML(athletes));
         calculation.innerHTML = `<h2>Rowing</h2><h3>Statistics.</h2><p class="stats">Number of athletes competing in Rowing: ${typeSport.length}</p>`
@@ -74,6 +75,7 @@ selectSport.addEventListener('change', (e) => {
         calculation.innerHTML = `<h2>All Athletes</h2><h3>Statistics.</h3><p class="stats">Number of athletes competing in the Rio 2016 Olympics: ${athletesNew.length}</p>`
     }
     container.insertAdjacentHTML('afterbegin', html);
+
 });
 
 //Filtrado de Equipo por Evento
@@ -131,5 +133,5 @@ order.addEventListener('change', (e) => {
     }
     container.insertAdjacentHTML('afterbegin', html);
 
-}); 
 
+}); 
